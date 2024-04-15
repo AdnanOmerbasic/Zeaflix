@@ -19,9 +19,48 @@ const moviesApi = createApi({
           };
         },
       }),
+      fetchHighestRatedMovies: builder.query({
+        query: () => {
+          return {
+            url: "discover/movie",
+            params: {
+              sort_by: "vote_average.desc",
+              api_key: "3867a8eaac8a5d3191ed5ec4b9b38f95",
+            },
+            method: "GET",
+          };
+        },
+      }),
+      fetchUpcommingMovies: builder.query({
+        query: () => {
+          return {
+            url: "discover/movie",
+            params: {
+              api_key: "3867a8eaac8a5d3191ed5ec4b9b38f95",
+            },
+            method: "GET",
+          };
+        },
+      }),
+      fetchSearchMovie: builder.query({
+        query: (searchTerm) => {
+          return {
+            url: "search/movie",
+            params: {
+              query: searchTerm,
+              api_key: "3867a8eaac8a5d3191ed5ec4b9b38f95",
+            },
+          };
+        },
+      }),
     };
   },
 });
 
-export const { useFetchPopularMoviesQuery } = moviesApi;
+export const {
+  useFetchPopularMoviesQuery,
+  useFetchHighestRatedMoviesQuery,
+  useFetchUpcommingMoviesQuery,
+  useFetchSearchMovieQuery,
+} = moviesApi;
 export { moviesApi };
