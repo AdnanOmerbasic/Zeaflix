@@ -1,3 +1,25 @@
 {
-  "favoriteMovies": []
+  "favoriteMovies": [
+    {
+      "id": 601796,
+      "adult": false,
+      "backdrop_path": "/7ZP8HtgOIDaBs12krXgUIygqEsy.jpg",
+      "genre_ids": [
+        878,
+        28,
+        14,
+        12
+      ],
+      "original_language": "ko",
+      "original_title": "외계+인 1부",
+      "overview": "Gurus in the late Goryeo dynasty try to obtain a fabled, holy sword, and humans in 2022 hunt down an alien prisoner that is locked in a human's body. The two parties cross paths when a time-traveling portal opens up.",
+      "popularity": 2013.605,
+      "poster_path": "/8QVDXDiOGHRcAD4oM6MXjE0osSj.jpg",
+      "release_date": "2022-07-20",
+      "title": "Alienoid",
+      "video": false,
+      "vote_average": 7.1,
+      "vote_count": 260
+    }
+  ]
 }
