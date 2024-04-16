@@ -32,11 +32,12 @@ const moviesApi = createApi({
         },
       }),
       fetchUpcommingMovies: builder.query({
-        query: () => {
+        query: (upcommingReleases) => {
           return {
             url: "discover/movie",
             params: {
               api_key: "3867a8eaac8a5d3191ed5ec4b9b38f95",
+              "primary_release_date.gte": upcommingReleases,
             },
             method: "GET",
           };

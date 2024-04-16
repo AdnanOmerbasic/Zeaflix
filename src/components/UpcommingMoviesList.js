@@ -2,7 +2,9 @@ import { useFetchUpcommingMoviesQuery } from "../store";
 import MovieCard from "./MovieCard";
 
 const UpcommingMoviesList = () => {
-  const { data, isFetching, error } = useFetchUpcommingMoviesQuery();
+  const upcommingReleases = "2024-04-17";
+  const { data, isFetching, error } =
+    useFetchUpcommingMoviesQuery(upcommingReleases);
   console.log(data, isFetching, error);
   let content;
   if (isFetching) {
@@ -15,10 +17,7 @@ const UpcommingMoviesList = () => {
     content = <div>Error loading movies</div>;
   } else {
     content = data.results.map((movie) => {
-      if (movie.release_date > "2024-04-02") {
-        return <MovieCard key={movie.id} movie={movie} />;
-      }
-      return null;
+      return <MovieCard key={movie.id} movie={movie} />;
     });
   }
   return (
