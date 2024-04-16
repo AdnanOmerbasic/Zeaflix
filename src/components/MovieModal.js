@@ -3,6 +3,7 @@ import {
   useAddFavoriteMovieMutation,
   useRemoveFavoriteMovieMutation,
 } from "../store";
+import MovieTrailer from "./MovieTrailer";
 
 const MovieModal = ({ toggleOff, movie }) => {
   const [addFavoriteMovie] = useAddFavoriteMovieMutation();
@@ -22,7 +23,8 @@ const MovieModal = ({ toggleOff, movie }) => {
         className="bg-[#292626] opacity-90 fixed  inset-0 "
       ></div>
       <div className=" bg-[#4d4444] fixed  rounded-xl h-820 w-700 ">
-        <div className="text-white flex justify-start items-center mt-96 font-bold text-xl">
+        <MovieTrailer movieId={movie.id} />
+        <div className="text-white flex justify-start items-center mt-6 font-bold text-xl">
           {movie.title}
         </div>
         <div className="text-white mt-6">{movie.overview}</div>

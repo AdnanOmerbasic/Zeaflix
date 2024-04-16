@@ -24,6 +24,7 @@ export {
   useFetchHighestRatedMoviesQuery,
   useFetchUpcommingMoviesQuery,
   useFetchSearchMovieQuery,
+  useFetchMovieTrailerQuery,
 } from "./apis/moviesApi";
 
 export {

@@ -53,6 +53,16 @@ const moviesApi = createApi({
           };
         },
       }),
+      fetchMovieTrailer: builder.query({
+        query: (movieId) => {
+          return {
+            url: `movie/${movieId}/videos`,
+            params: {
+              api_key: "3867a8eaac8a5d3191ed5ec4b9b38f95",
+            },
+          };
+        },
+      }),
     };
   },
 });
@@ -62,5 +72,6 @@ export const {
   useFetchHighestRatedMoviesQuery,
   useFetchUpcommingMoviesQuery,
   useFetchSearchMovieQuery,
+  useFetchMovieTrailerQuery,
 } = moviesApi;
 export { moviesApi };
