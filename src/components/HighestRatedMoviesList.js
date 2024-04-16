@@ -14,13 +14,12 @@ const HighestRatedMovieList = () => {
   } else if (error) {
     content = <div>Error loading movies</div>;
   } else {
-    content = data.results
-      .map((movie) => {
+    content = data.results.map((movie) => {
+      if (movie.poster_path !== null) {
         return <MovieCard key={movie.id} movie={movie} />;
-      })
-      .filter(
-        (movie) => movie.poster_path !== null && movie.vote_average !== 0
-      );
+      }
+      return null;
+    });
   }
 
   return (
