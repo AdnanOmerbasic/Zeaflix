@@ -12,17 +12,15 @@ const MovieTrailer = ({ movieId }) => {
   } else if (error) {
     content = <div>Error loading movie trailer</div>;
   } else {
-    const trailer = data.results.find(
+    const movieTrailer = data.results.find(
       (video) => video.site === "YouTube" && video.type === "Trailer"
     );
-    if (trailer) {
-      const embedUrl = `https://www.youtube.com/embed/${trailer.key}`;
+    if (movieTrailer) {
+      const embed = `https://www.youtube.com/embed/${movieTrailer.key}`;
       content = (
         <iframe
           className="w-screen h-96 border-none"
-          src={embedUrl}
-          allow="autoplay; encrypted-media"
-          allowFullScreen
+          src={embed}
           title="Movie Trailer"
         ></iframe>
       );
